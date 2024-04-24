@@ -1,13 +1,193 @@
-audio{
-    color: rgb(38, 107, 168);
-}
-
 img{
     border-radius: 25%;
 }
 
 body{
     text-align: center;
-    background-color: white;
-    font-size: 1.5rem;
+    background-color: rgb(101, 101, 101);
+    font-size: 1.2rem;
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
+
+img {
+  width: 250px; /* Taille désirée pour les images en largeur */
+  height: auto; /* Permet de maintenir le ratio hauteur/largeur */
+}
+
+
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+  }
+
+  .navbar a  {
+    margin: 0 10px;
+    color: #06ab00;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    background-color: #06ab00;
+    color: black;
+}
+
+  .navbar a:hover {
+    background-color: #ddd; /* couleur de fond au survol */
+    color: rgb(0, 0, 0); /* couleur du texte au survol */
+  }
+
+
+h2 {
+    color: azure;
+    align-items: center;
+    cursor: pointer; /* Définir le curseur de la souris en pointeur pour indiquer l'interaction */
+    transition: color 0.3s ease; /* Transition de couleur de 0.3s avec une courbe d'accélération */
+  }
+
+  button {
+    background-color: yellowgreen;
+    text-decoration:solid;
+  }
+
+  /* Animation pour le changement de couleur du titre lors de la sélection */
+  @keyframes titleSelected {
+    0% {
+      color: rgb(255, 255, 255);
+    }
+    33% {
+        color: rgb(90, 175, 28);
+      }
+    66% {
+        color: rgb(90, 175, 28);
+      }  
+    100% {
+        color: rgb(255, 255, 255);
+    }
+  }
+  
+  h2.selected {
+    animation: titleSelected 1s infinite;
+  }
+
+#playlist {
+    list-style: none;
+    padding: 3%;
+    margin: 2%;
+    display: flex; 
+    flex-wrap: wrap; /* Permettre le retour à la ligne des éléments */
+    gap: 20px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Style pour chaque élément de la liste de lecture */
+  #playlist li {
+    flex: 0 0 calc(30%); /* Largeur de chaque élément (3 éléments par ligne) */
+    background-color: #000000;
+    padding: 30px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 1s ease;
+  }
+  
+  /* Style pour chaque titre */
+  #playlist li h2 {
+    margin: 0;
+    font-size: 30px;
+  }
+  
+  /* Style pour l'image de chaque élément */
+  #playlist li img {
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  
+  /* Au survol d'un élément de la liste de lecture */
+  #playlist li:hover {
+    background-color: #4e4e4e;
+  }
+  
+
+/* Style pour la catégorie de musique */
+#playlist li small {
+    color: white;
+    
+  }
+
+/* Style pour la catégorie de musique lorsque la lecture est en pause */
+  #playlist li.paused small {
+    color: gray;
+  }
+  
+  nav .button {
+    display: inline-block; /* Affichage en tant qu'élément en ligne */
+    padding: 10px 20px; /* Remplissage intérieur du bouton */
+    background-color: #4CAF50; /* Couleur de fond du bouton */
+    color: white; /* Couleur du texte du bouton */
+    text-align: center; /* Alignement du texte au centre */
+    text-decoration: none; /* Supprimer la décoration du lien par défaut */
+    border: none; /* Supprimer la bordure par défaut */
+    border-radius: 5px; /* Rayon de la bordure pour arrondir les coins */
+    cursor: pointer; /* Curseur de la souris en pointeur pour indiquer l'interaction */
+    transition: background-color 0.3s ease; /* Transition pour un effet visuel fluide */
+  }
+  
+  /* Style pour le bouton rectangulaire au survol */
+  nav .button:hover {
+    background-color: #45a049; /* Couleur de fond du bouton au survol */
+  }
+  
+
+  /*Bouton Pause*/
+  #randomButton {
+    font-size: 1.2rem;
+    position: relative;
+    width: 10%;
+    height: 60px;
+    border: none;
+    border-radius: 0%;
+    background-color: #1ED760;
+    color: #000000;
+    font-family: sans-serif;
+    cursor: pointer;
+    overflow: hidden;
+    bottom: 30px;
+  }
+  
+  #randomButton span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    transition: all 0.3s ease;
+  }
+  
+  #randomButton .icon-play {
+    opacity: 1;
+  }
+  
+  #randomButton .icon-pause {
+    opacity: 0;
+  }
+  
+  #randomButton:hover .icon-play {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(-360deg);
+  }
+  
+  #randomButton:hover .icon-pause {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
